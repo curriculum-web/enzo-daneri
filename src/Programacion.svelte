@@ -21,7 +21,7 @@
 
       <p>Svelte JS. Html. CSS. JavaScript. Git</p>
       <div class="icons"><a href="https://github.com/EnzoDaneri" target="blank"><i class="fab fa-github"></i></a>
-     <a href="https://wa.me/542392462524/?text=Hola!.%20Vi%20tu%20perfil%20en%20.web.app.%20"><i class="fab fa-whatsapp"></i></a>
+     <a href="https://wa.me/542392462524/?text=Hola!.%20Vi%20tu%20web%20."><i class="fab fa-whatsapp"></i></a>
      <a href="https://www.linkedin.com/in/enzo-adri%C3%A1n-daneri-desarrollo-web/"target="blank"><i class="fab fa-linkedin-in"></i></a></div>
       {#if portfolio == false}
             <div class="btn" on:click={showPortfolio}>Portfolio</div>

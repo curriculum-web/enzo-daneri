@@ -12,7 +12,7 @@
 <p class="phone">Argentina. Trenque Lauquen. Buenos Aires</p>
 <p class="phone"><i class="fas fa-phone-alt"></i> <span>+54 2392 15 462524</span></p>
      <div class="icons"><a href="https://github.com/EnzoDaneri" target="blank"><i class="fab fa-github"></i></a>
-     <a href="https://wa.me/542392462524/?text=Hola!.%20Vi%20tu%20perfil%20en%20.web.app.%20"><i class="fab fa-whatsapp"></i></a>
+     <a href="https://wa.me/542392462524/?text=Hola!.%20Vi%20tu%20web%20"><i class="fab fa-whatsapp"></i></a>
      <a href="https://www.linkedin.com/in/enzo-adri%C3%A1n-daneri-desarrollo-web/"target="blank"><i class="fab fa-linkedin-in"></i></a>
      <a href="https://www.facebook.com/enzodaneri"target="blank"><i class="fab fa-facebook-f"></i></a>
      <a href="https://www.instagram.com/danerienzo/" target="blank"><i class="fab fa-instagram"></i></a>

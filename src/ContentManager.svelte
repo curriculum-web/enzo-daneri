@@ -23,7 +23,7 @@
 </div>
 </div>
 
-    <a href="https://wa.me/542392462524/?text=Hola!.%20Quiero%20Content-Manager%20Vi%20tu%20perfil%20en%20danerienzo.web.app.%20">
+    <a href="https://wa.me/542392462524/?text=Hola!.%20Vi%20tu%20web.%20">
     <div class="btn">Contactar</div></a>
 </div>
  
