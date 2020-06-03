@@ -834,7 +834,7 @@ var app = (function () {
     			div0 = element("div");
 
     			div0.innerHTML = `<a href="https://github.com/EnzoDaneri" target="blank" class="svelte-vjs7yy"><i class="fab fa-github svelte-vjs7yy"></i></a> 
-     <a href="https://wa.me/542392462524/?text=Hola!.%20Vi%20tu%20perfil%20en%20.web.app.%20" class="svelte-vjs7yy"><i class="fab fa-whatsapp svelte-vjs7yy"></i></a> 
+     <a href="https://wa.me/542392462524/?text=Hola!.%20Vi%20tu%20web%20." class="svelte-vjs7yy"><i class="fab fa-whatsapp svelte-vjs7yy"></i></a> 
      <a href="https://www.linkedin.com/in/enzo-adri%C3%A1n-daneri-desarrollo-web/" target="blank" class="svelte-vjs7yy"><i class="fab fa-linkedin-in svelte-vjs7yy"></i></a>`;
 
     			t8 = space();
@@ -1314,7 +1314,7 @@ var app = (function () {
 <p class="phone svelte-nxnn2">Argentina. Trenque Lauquen. Buenos Aires</p> 
 <p class="phone svelte-nxnn2"><i class="fas fa-phone-alt"></i>  <span class="svelte-nxnn2">+54 2392 15 462524</span></p> 
      <div class="icons svelte-nxnn2"><a href="https://github.com/EnzoDaneri" target="blank"><i class="fab fa-github svelte-nxnn2"></i></a> 
-     <a href="https://wa.me/542392462524/?text=Hola!.%20Vi%20tu%20perfil%20en%20.web.app.%20"><i class="fab fa-whatsapp svelte-nxnn2"></i></a> 
+     <a href="https://wa.me/542392462524/?text=Hola!.%20Vi%20tu%web%20"><i class="fab fa-whatsapp svelte-nxnn2"></i></a> 
      <a href="https://www.linkedin.com/in/enzo-adri%C3%A1n-daneri-desarrollo-web/" target="blank"><i class="fab fa-linkedin-in svelte-nxnn2"></i></a> 
      <a href="https://www.facebook.com/enzodaneri" target="blank"><i class="fab fa-facebook-f svelte-nxnn2"></i></a> 
      <a href="https://www.instagram.com/danerienzo/" target="blank"><i class="fab fa-instagram svelte-nxnn2"></i></a></div> 
@@ -1420,7 +1420,7 @@ var app = (function () {
      <a href="https://www.facebook.com/enzodaneri" target="blank" class="svelte-1p7bfwx"><i class="fab fa-facebook-f svelte-1p7bfwx"></i></a> 
      <a href="https://www.instagram.com/danerienzo/" target="blank" class="svelte-1p7bfwx"><i class="fab fa-instagram svelte-1p7bfwx"></i></a></div></div></div> 
 
-    <a href="https://wa.me/542392462524/?text=Hola!.%20Quiero%20Content-Manager%20Vi%20tu%20perfil%20en%20danerienzo.web.app.%20" class="svelte-1p7bfwx"><div class="btn svelte-1p7bfwx">Contactar</div></a>`;
+    <a href="https://wa.me/542392462524/?text=Hola!.%20Vi%20tu%20web.%20" class="svelte-1p7bfwx"><div class="btn svelte-1p7bfwx">Contactar</div></a>`;
 
     			attr(div4, "class", "container svelte-1p7bfwx");
     		},
