@@ -1,5 +1,5 @@
 <script>
-  import { fly, fade, blur} from 'svelte/transition';
+  import { fly, fade} from 'svelte/transition';
   import Programacion from './Programacion.svelte';
   import Back from './Back.svelte'
   import Compania from './Compania.svelte'
@@ -42,7 +42,7 @@ tips == false && contacto == false && info == false
 && contentManager == false}
 
 <div class="container"  in:fade>
-<div in:blur class="containerImg"><img src="./img/en.jpg" alt="Foto de Enzo Daneri"></div>
+<div  class="containerImg"><img src="./img/en.jpg" alt="Foto de Enzo Daneri"></div>
 <h1><span>Enzo</span> Daneri</h1>
 <h2>Servicios Remotos</h2>
 
