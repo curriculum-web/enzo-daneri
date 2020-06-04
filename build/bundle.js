@@ -549,13 +549,13 @@ var app = (function () {
 
     const programacion = [
      
-      {"title": "Budget-Calculator",
-       "description": "Aplicación con Local Storage realizada en svelte",
-       "url": "https://enzodaneri.github.io/budget-calculator/"
-      }, 
       {"title": "Book-List",
        "description": "Aplicación con Local Storage realizada en Html, Bootstrap y JavaScript",
        "url": "https://enzodaneri.github.io/book-list/"
+      }, 
+      {"title": "Budget-Calculator",
+       "description": "Aplicación con Local Storage realizada en svelte",
+       "url": "https://enzodaneri.github.io/budget-calculator/"
       }, 
       {"title": "HandsWash-App",
       "description": "Aplicación para lavado de manos por covid-19",
