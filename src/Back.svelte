@@ -1,10 +1,10 @@
 
 <script>
-
+import { blur} from 'svelte/transition';
 
 </script>
 
-<div class="tabs" on:click  >
+<div in:blur class="tabs" on:click  >
     <i class="fas fa-arrow-left"></i>
 
      </div>

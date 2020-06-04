@@ -13,9 +13,9 @@
 
 <div class="container"  in:fly="{{x:-300, duration: 600}}">
 
-<h1 >Frontend <span>Developer</span></h1>
+<h1>Frontend <span>Developer</span></h1>
 
-<div class="cardTres">
+<div class="cardTres" >
   <div class="card-content">
     <i class="fas fa-laptop-code"></i>
 
@@ -35,7 +35,7 @@
 {#if portfolio == true}
 
 {#each programacion as project, index}
-<div in:fade> 
+<div transition:fade > 
 <div class={index% 2 == 0 ? "card" : "cardDos"}>
 <div class="card-content">
 <a href={project.url}><div class="verLink">Ver</div>
