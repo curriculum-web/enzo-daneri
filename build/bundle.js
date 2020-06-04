@@ -354,6 +354,111 @@ var app = (function () {
             }
         };
     }
+    function create_bidirectional_transition(node, fn, params, intro) {
+        let config = fn(node, params);
+        let t = intro ? 0 : 1;
+        let running_program = null;
+        let pending_program = null;
+        let animation_name = null;
+        function clear_animation() {
+            if (animation_name)
+                delete_rule(node, animation_name);
+        }
+        function init(program, duration) {
+            const d = program.b - t;
+            duration *= Math.abs(d);
+            return {
+                a: t,
+                b: program.b,
+                d,
+                duration,
+                start: program.start,
+                end: program.start + duration,
+                group: program.group
+            };
+        }
+        function go(b) {
+            const { delay = 0, duration = 300, easing = identity, tick = noop, css } = config || null_transition;
+            const program = {
+                start: now() + delay,
+                b
+            };
+            if (!b) {
+                // @ts-ignore todo: improve typings
+                program.group = outros;
+                outros.r += 1;
+            }
+            if (running_program) {
+                pending_program = program;
+            }
+            else {
+                // if this is an intro, and there's a delay, we need to do
+                // an initial tick and/or apply CSS animation immediately
+                if (css) {
+                    clear_animation();
+                    animation_name = create_rule(node, t, b, duration, delay, easing, css);
+                }
+                if (b)
+                    tick(0, 1);
+                running_program = init(program, duration);
+                add_render_callback(() => dispatch(node, b, 'start'));
+                loop(now => {
+                    if (pending_program && now > pending_program.start) {
+                        running_program = init(pending_program, duration);
+                        pending_program = null;
+                        dispatch(node, running_program.b, 'start');
+                        if (css) {
+                            clear_animation();
+                            animation_name = create_rule(node, t, running_program.b, running_program.duration, 0, easing, config.css);
+                        }
+                    }
+                    if (running_program) {
+                        if (now >= running_program.end) {
+                            tick(t = running_program.b, 1 - t);
+                            dispatch(node, running_program.b, 'end');
+                            if (!pending_program) {
+                                // we're done
+                                if (running_program.b) {
+                                    // intro — we can tidy up immediately
+                                    clear_animation();
+                                }
+                                else {
+                                    // outro — needs to be coordinated
+                                    if (!--running_program.group.r)
+                                        run_all(running_program.group.c);
+                                }
+                            }
+                            running_program = null;
+                        }
+                        else if (now >= running_program.start) {
+                            const p = now - running_program.start;
+                            t = running_program.a + running_program.d * easing(p / running_program.duration);
+                            tick(t, 1 - t);
+                        }
+                    }
+                    return !!(running_program || pending_program);
+                });
+            }
+        }
+        return {
+            run(b) {
+                if (is_function(config)) {
+                    wait().then(() => {
+                        // @ts-ignore
+                        config = config();
+                        go(b);
+                    });
+                }
+                else {
+                    go(b);
+                }
+            },
+            end() {
+                clear_animation();
+                running_program = pending_program = null;
+            }
+        };
+    }
     function create_component(block) {
         block && block.c();
     }
@@ -519,6 +624,7 @@ var app = (function () {
 
     function create_fragment(ctx) {
     	let div;
+    	let div_intro;
     	let mounted;
     	let dispose;
 
@@ -537,7 +643,14 @@ var app = (function () {
     			}
     		},
     		p: noop,
-    		i: noop,
+    		i(local) {
+    			if (!div_intro) {
+    				add_render_callback(() => {
+    					div_intro = create_in_transition(div, blur, {});
+    					div_intro.start();
+    				});
+    			}
+    		},
     		o: noop,
     		d(detaching) {
     			if (detaching) detach(div);
@@ -690,12 +803,17 @@ var app = (function () {
     // (35:0) {#if portfolio == true}
     function create_if_block(ctx) {
     	let each_1_anchor;
+    	let current;
     	let each_value = programacion;
     	let each_blocks = [];
 
     	for (let i = 0; i < each_value.length; i += 1) {
     		each_blocks[i] = create_each_block(get_each_context(ctx, each_value, i));
     	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
 
     	return {
     		c() {
@@ -711,6 +829,7 @@ var app = (function () {
     			}
 
     			insert(target, each_1_anchor, anchor);
+    			current = true;
     		},
     		p(ctx, dirty) {
     			if (dirty & /*programacion*/ 0) {
@@ -731,19 +850,33 @@ var app = (function () {
     					}
     				}
 
-    				for (; i < each_blocks.length; i += 1) {
-    					each_blocks[i].d(1);
+    				group_outros();
+
+    				for (i = each_value.length; i < each_blocks.length; i += 1) {
+    					out(i);
     				}
 
-    				each_blocks.length = each_value.length;
+    				check_outros();
     			}
     		},
     		i(local) {
+    			if (current) return;
+
     			for (let i = 0; i < each_value.length; i += 1) {
     				transition_in(each_blocks[i]);
     			}
+
+    			current = true;
     		},
-    		o: noop,
+    		o(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
     		d(detaching) {
     			destroy_each(each_blocks, detaching);
     			if (detaching) detach(each_1_anchor);
@@ -765,7 +898,8 @@ var app = (function () {
     	let t2;
     	let div2_class_value;
     	let t3;
-    	let div3_intro;
+    	let div3_transition;
+    	let current;
 
     	return {
     		c() {
@@ -796,19 +930,27 @@ var app = (function () {
     			append(div2, p);
     			append(p, t2);
     			append(div3, t3);
+    			current = true;
     		},
     		p: noop,
     		i(local) {
-    			if (!div3_intro) {
-    				add_render_callback(() => {
-    					div3_intro = create_in_transition(div3, fade, {});
-    					div3_intro.start();
-    				});
-    			}
+    			if (current) return;
+
+    			add_render_callback(() => {
+    				if (!div3_transition) div3_transition = create_bidirectional_transition(div3, fade, {}, true);
+    				div3_transition.run(1);
+    			});
+
+    			current = true;
     		},
-    		o: noop,
+    		o(local) {
+    			if (!div3_transition) div3_transition = create_bidirectional_transition(div3, fade, {}, false);
+    			div3_transition.run(0);
+    			current = false;
+    		},
     		d(detaching) {
     			if (detaching) detach(div3);
+    			if (detaching && div3_transition) div3_transition.end();
     		}
     	};
     }
@@ -827,6 +969,7 @@ var app = (function () {
     	let t8;
     	let t9;
     	let div3_intro;
+    	let current;
 
     	function select_block_type(ctx, dirty) {
     		if (/*portfolio*/ ctx[0] == false) return create_if_block_1;
@@ -883,6 +1026,7 @@ var app = (function () {
     			if_block0.m(div1, null);
     			append(div3, t9);
     			if (if_block1) if_block1.m(div3, null);
+    			current = true;
     		},
     		p(ctx, [dirty]) {
     			if (current_block_type === (current_block_type = select_block_type(ctx)) && if_block0) {
@@ -911,11 +1055,17 @@ var app = (function () {
     					if_block1.m(div3, null);
     				}
     			} else if (if_block1) {
-    				if_block1.d(1);
-    				if_block1 = null;
+    				group_outros();
+
+    				transition_out(if_block1, 1, 1, () => {
+    					if_block1 = null;
+    				});
+
+    				check_outros();
     			}
     		},
     		i(local) {
+    			if (current) return;
     			transition_in(if_block1);
 
     			if (!div3_intro) {
@@ -924,8 +1074,13 @@ var app = (function () {
     					div3_intro.start();
     				});
     			}
+
+    			current = true;
     		},
-    		o: noop,
+    		o(local) {
+    			transition_out(if_block1);
+    			current = false;
+    		},
     		d(detaching) {
     			if (detaching) detach(div3);
     			if_block0.d();
