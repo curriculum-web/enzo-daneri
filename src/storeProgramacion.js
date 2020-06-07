@@ -5,6 +5,10 @@ const programacion = [
    "description": "Aplicación con Local Storage realizada en Html, Bootstrap y JavaScript",
    "url": "https://enzodaneri.github.io/book-list/"
   }, 
+  {"title": "To-Do App",
+   "description": "Aplicación con Svelte",
+   "url": " https://enzodaneri.github.io/svelte-todo-app/"
+  }, 
   {"title": "Budget-Calculator",
    "description": "Aplicación con Local Storage realizada en svelte",
    "url": "https://enzodaneri.github.io/budget-calculator/"
