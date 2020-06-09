@@ -652,11 +652,16 @@ var app = (function () {
     	}
     }
 
-    const programacion = [
+    const programacion = [ 
      
       {"title": "Book-List",
        "description": "Aplicación con Local Storage realizada en Html, Bootstrap y JavaScript",
        "url": "https://enzodaneri.github.io/book-list/"
+      }, 
+
+      {"title": "Expenses-Tracker",
+       "description": "Aplicación FullStack en Svelte js y Nodejs",
+       "url": "https://expenses-trackers.herokuapp.com/"
       }, 
       {"title": "To-Do App",
        "description": "Aplicación con Svelte",
