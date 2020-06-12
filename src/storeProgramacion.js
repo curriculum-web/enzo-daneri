@@ -5,6 +5,11 @@ const programacion = [
    "description": "Aplicación con Local Storage realizada en Html, Bootstrap y JavaScript",
    "url": "https://enzodaneri.github.io/book-list/"
   }, 
+   
+  {"title": "Fetch-request",
+   "description": "Fetch request in Svelte",
+   "url": "https://http-request.netlify.app/"
+  }, 
 
   {"title": "Expenses-Tracker",
    "description": "Aplicación FullStack en Svelte js y Nodejs",
