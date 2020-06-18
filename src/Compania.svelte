@@ -19,11 +19,11 @@
 <div class="card">
 <div class="card-content">
 <i class="fas fa-briefcase"></i>
- <p>Creación de curriculum-web y sitios personales.</p>
+ <p>Creación de curriculum web y sitios personales.</p>
  <i class="fas fa-globe-americas" ></i>
  <p> Compartí toda tu info profesional con el mundo</p>
  
-  <a href="https://wa.me/542392462524/?text=Hola!.%20Vi%20tu%20web%20.">
+  <a  href="https://wa.me/542392462524/?text=Hola!.%20Vi%20tu%20web%20.">
   <div class="btn">Escribime</div></a>
 </div>
 
@@ -41,6 +41,7 @@ i {
   font-size: 70px;
   margin-top: 10px;
 }
+
 
 .container {
     text-align: center;
