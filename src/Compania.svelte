@@ -38,7 +38,7 @@
 <style>
 
 i {
-  font-size: 90px;
+  font-size: 70px;
   margin-top: 15px;
   margin-bottom: 10px;
 }
