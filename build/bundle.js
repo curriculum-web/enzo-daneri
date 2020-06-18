@@ -1305,7 +1305,7 @@ var app = (function () {
      <a href="https://www.linkedin.com/in/enzo-adri%C3%A1n-daneri-desarrollo-web/" target="blank"><i class="fab fa-linkedin-in svelte-nxnn2"></i></a> 
      <a href="https://www.facebook.com/enzodaneri" target="blank"><i class="fab fa-facebook-f svelte-nxnn2"></i></a> 
      <a href="https://www.instagram.com/danerienzo/" target="blank"><i class="fab fa-instagram svelte-nxnn2"></i></a></div> 
-<div class="curriculum svelte-nxnn2"><a href="EnzoDaneri-CurriculumAdministrativo.pdf" target="blank" class="svelte-nxnn2"><p><i class="far fa-address-card svelte-nxnn2"></i>   Mi C.V</p></a></div></div></div>`;
+<div class="curriculum svelte-nxnn2"><a href="Currículum-Programacion. Enzo Daneri.pdf" target="blank" class="svelte-nxnn2"><p><i class="far fa-address-card svelte-nxnn2"></i>   Mi C.V</p></a></div></div></div>`;
 
     			attr(div4, "class", "container svelte-nxnn2");
     		},
