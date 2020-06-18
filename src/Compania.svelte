@@ -39,8 +39,7 @@
 
 i {
   font-size: 70px;
-  margin-top: 15px;
-  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .container {
