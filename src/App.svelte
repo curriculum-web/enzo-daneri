@@ -47,8 +47,8 @@ tips == false && contacto == false && info == false
 <h2>Servicios Remotos</h2>
 
 <div class="btn" on:click={showProgramacion}>Programador</div>
-<div class="btn" on:click={showCompania}>Virtual Buddy</div>
-<div class="btn" on:click={showContentManager}>Copywriter</div>
+<div class="btn" on:click={showCompania}>Producto</div>
+<div class="btn" on:click={showContentManager}>Blog</div>
 
 
   <footer>

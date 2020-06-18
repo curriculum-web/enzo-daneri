@@ -1,6 +1,5 @@
 <script>
   import { fly} from 'svelte/transition';
-  import Comprar from './Comprar.svelte'
   import Back from './Back.svelte'
 
   let comprar = false
@@ -14,18 +13,18 @@
 
 <div class="container" in:fly="{{x:-300, duration: 600}}">
 
-<h1 ><span>Virtual</span> Buddy</h1>
-<h2>Service</h2>
+<h1 ><span>Curriculum</span> Web</h1>
+<h2>Product</h2>
 
 <div class="card">
 <div class="card-content">
- <i class="fab fa-grav"></i>
-
- <p>Acompañamiento Virtual para tu vida. </p>
+<i class="fas fa-briefcase"></i>
+ <p>Creación de curriculum-web y sitios personales.</p>
  <i class="fas fa-globe-americas" ></i>
- <p>Para cualquier lugar del mundo</p>
+ <p> Compartí toda tu info profesional con el mundo</p>
  
-  <div class="btn" on:click={showComprar}>Comprar</div>
+  <a href="https://wa.me/542392462524/?text=Hola!.%20Vi%20tu%20web%20.">
+  <div class="btn">Escribime</div></a>
 </div>
 
 </div>
@@ -34,10 +33,7 @@
 
 {/if}
 
-{#if comprar == true}
-  <Comprar/>
-  <Back on:click={showComprar}/>
-{/if}
+
 
 <style>
 
@@ -78,7 +74,7 @@ i {
 
   }
   .card p {
-    padding: 10px;
+    padding: 20px;
     margin-bottom: 20px;
     margin-top: 10px;
   }
@@ -93,6 +89,11 @@ i {
     border: 2px solid rgb(78, 158, 250);
     border-radius: 5px;
     font-weight: bold;
+  }
+  .card a {
+    text-decoration: none;
+    color: #333;
+
   }
 
    /* ################### TABLETS ############################### */
@@ -111,6 +112,7 @@ i {
     .container h1 {
       font-size: 50px;
     }
+    
   }
  
      

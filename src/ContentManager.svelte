@@ -6,7 +6,7 @@
 
 
 <div class="container"  in:fly="{{x:-300, duration: 600}}">
-<h1>Copywriter</h1>
+<h1>Blog</h1>
 
 
 <div class="card">
@@ -25,6 +25,16 @@
 
     <a href="https://wa.me/542392462524/?text=Hola!.%20Vi%20tu%20web.%20">
     <div class="btn">Contactar</div></a>
+<br>
+<hr>
+    <div class="card-blog"> <h2>Minimalismo</h2><br>
+  <p> Desde sus inicios la web ha crecido de manera exponencial y se ha vuelto cada vez más compleja. En ese proceso los desarrolladores y las modas han ido variando los estilos y las maneras de presentar la información a los usuarios. Pero no siempre estos cambios han sido en beneficio de una buena experiencia de navegación.
+</p><br>
+<p>
+  Existe una tendencia mayoritaria que busca presentar la mayor cantidad de contenido posible en la pantalla. Pero la verdad es que muy pocas veces alguien lee todo lo que aparece allí. En lo personal me gustan las interfaces limpias, claras, e intuitivas. Por supuesto que pueden existir casos en los cuales sea necesario informar muchas cosas, con grandes cantidades de palabras, imágenes y cosas que ofrecer. No obstante, todo ello se podría presentar cuidando siempre el principio de minimalismo.</p><br>
+
+<p> Es mi intención que esta web personal sea un ejemplo de cómo me gusta presentar la información, incluyendo sus botones, textos e imágenes. Espero que sea de tu agrado al usarla y que me tengas en cuenta para desarrollar tu propio proyecto siguiendo estos lineamientos.</p>
+</div>
 </div>
  
 <style>
@@ -45,9 +55,7 @@
  font-weight: normal;
 
 }
-.container span {
-  color: rgba(78, 158, 250, 0.795);
-}
+
 
 .card {
    width: 270px;
@@ -58,7 +66,21 @@
    background:  rgba(78, 158, 250, 0.192);
 
 }
-.card p {
+.card-blog {
+   width: 270px;
+   text-align: start;
+   margin: 20px auto;
+   padding: 20px;
+   border-radius: 5px;
+   background:  rgba(78, 158, 250, 0.192);
+
+}
+.card-blog h2 {
+  text-align: center;
+  font-family: "Comfortaa", cursive;
+
+}
+.card p, .card-blog p {
     color: #333;
     font-family: "Comfortaa", cursive;
     font-size: 18px;
