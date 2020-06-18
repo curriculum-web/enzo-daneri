@@ -1111,19 +1111,19 @@ var app = (function () {
     		c() {
     			div3 = element("div");
 
-    			div3.innerHTML = `<h1 class="svelte-z4ee6x"><span class="svelte-z4ee6x">Curriculum</span> Web</h1> 
-<h2 class="svelte-z4ee6x">Product</h2> 
+    			div3.innerHTML = `<h1 class="svelte-1yoqn0m"><span class="svelte-1yoqn0m">Curriculum</span> Web</h1> 
+<h2 class="svelte-1yoqn0m">Product</h2> 
 
-<div class="card svelte-z4ee6x"><div class="card-content"><i class="fas fa-briefcase svelte-z4ee6x"></i> 
- <p class="svelte-z4ee6x">Creación de curriculum-web y sitios personales.</p> 
- <i class="fas fa-globe-americas svelte-z4ee6x"></i> 
- <p class="svelte-z4ee6x"> Compartí toda tu info profesional con el mundo</p> 
+<div class="card svelte-1yoqn0m"><div class="card-content"><i class="fas fa-briefcase svelte-1yoqn0m"></i> 
+ <p class="svelte-1yoqn0m">Creación de curriculum-web y sitios personales.</p> 
+ <i class="fas fa-globe-americas svelte-1yoqn0m"></i> 
+ <p class="svelte-1yoqn0m"> Compartí toda tu info profesional con el mundo</p> 
  
-  <a href="https://wa.me/542392462524/?text=Hola!.%20Vi%20tu%20web%20." class="svelte-z4ee6x"><div class="btn svelte-z4ee6x">Escribime</div></a></div></div>`;
+  <a href="https://wa.me/542392462524/?text=Hola!.%20Vi%20tu%20web%20." class="svelte-1yoqn0m"><div class="btn svelte-1yoqn0m">Escribime</div></a></div></div>`;
 
     			t12 = space();
     			create_component(back.$$.fragment);
-    			attr(div3, "class", "container svelte-z4ee6x");
+    			attr(div3, "class", "container svelte-1yoqn0m");
     		},
     		m(target, anchor) {
     			insert(target, div3, anchor);
