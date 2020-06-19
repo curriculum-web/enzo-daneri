@@ -18,7 +18,7 @@
      <a href="https://www.instagram.com/danerienzo/" target="blank"><i class="fab fa-instagram"></i></a>
 </div>
 <div class="curriculum">
-<a  href="EnzoDaneri-CurriculumAdministrativo.pdf" target="blank"> <p ><i class="far fa-address-card"></i>   Mi C.V</p>
+<a  href="Currículum-Programacion. Enzo Daneri.pdf" target="blank"> <p ><i class="far fa-address-card"></i>   Mi C.V</p>
  </a>
 </div>
 </div>

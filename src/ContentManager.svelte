@@ -6,7 +6,7 @@
 
 
 <div class="container"  in:fly="{{x:-300, duration: 600}}">
-<h1>Copywriter</h1>
+<h1>Blog</h1>
 
 
 <div class="card">
@@ -25,6 +25,8 @@
 
     <a href="https://wa.me/542392462524/?text=Hola!.%20Vi%20tu%20web.%20">
     <div class="btn">Contactar</div></a>
+
+
 </div>
  
 <style>
@@ -45,9 +47,7 @@
  font-weight: normal;
 
 }
-.container span {
-  color: rgba(78, 158, 250, 0.795);
-}
+
 
 .card {
    width: 270px;
@@ -58,7 +58,21 @@
    background:  rgba(78, 158, 250, 0.192);
 
 }
-.card p {
+.card-blog {
+   width: 270px;
+   text-align: start;
+   margin: 20px auto;
+   padding: 20px;
+   border-radius: 5px;
+   background:  rgba(78, 158, 250, 0.192);
+
+}
+.card-blog h2 {
+  text-align: center;
+  font-family: "Comfortaa", cursive;
+
+}
+.card p, .card-blog p {
     color: #333;
     font-family: "Comfortaa", cursive;
     font-size: 18px;

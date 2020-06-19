@@ -7,32 +7,32 @@
 
 <div class="container"  in:fly="{{x:-300, duration: 600}}">
  <h1>Info</h1>
-<h2 ><span>Virtual</span> Buddy</h2>
+<h2 ><span>Enzo</span> Daneri</h2>
 
 
 <div class="card">
 <div class="card-content">
-<p>Virtual Buddy es un servicio de acompañamiento virtual</p>
+<p>Gracias por visitar mi Sitio Web Personal </p>
 </div>
 </div>
 
 <div class="cardDos">
 <div class="card-content">
-<p>La finalidad es recreativa</p>
+<p>Aquí muestro mis servicios, tanto para empresas, como para particulares.</p>
 </div>
 </div>
 
 
 <div class="card">
 <div class="card-content">
-<p>Por USD 30 tienes acompañamiento durante 1 mes </p>
+<p>Es mi objetivo lograr interfaces de usuario limpias e intuitivas</p>
 </div>
 </div>
 
 
 <div class="cardDos">
 <div class="card-content">
-<p>La frecuencia será a convenir</p>
+<p>Siempre con pasión por la programación! </p>
 </div>
 </div>
 
