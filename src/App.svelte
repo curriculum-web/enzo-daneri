@@ -7,6 +7,7 @@
   import Contacto from './Contacto.svelte'
   import Info from './Info.svelte'
   import ContentManager from './ContentManager.svelte'
+  import GoalsApp from './GoalsApp.svelte'
 
   let programacion = false
   let compania = false
@@ -14,6 +15,7 @@
   let contacto = false
   let info = false
   let contentManager = false
+  let goalsApp = false
 
   const showProgramacion = () => {
 	  programacion = !programacion
@@ -33,16 +35,19 @@
   const showContentManager = () => {
 	  contentManager = !contentManager
   }
+  const showGoalsApp = () => {
+	  goalsApp = !goalsApp;
+  }
 
 </script>
 
 
 {#if programacion == false && compania == false && 
 tips == false && contacto == false && info == false
-&& contentManager == false}
+&& contentManager == false && goalsApp == false}
 
 <div class="container"  in:fade>
-<div  class="containerImg"><img src="./img/en.jpg" alt="Foto de Enzo Daneri"></div>
+<div  class="containerImg"><img on:click={showGoalsApp} src="./img/en.jpg" alt="Foto de Enzo Daneri"></div>
 <h1><span>Enzo</span> Daneri</h1>
 <h2>Servicios Remotos</h2>
 
@@ -93,6 +98,13 @@ tips == false && contacto == false && info == false
 <Back on:click={showContentManager}/>
 
 {/if}
+
+{#if showGoalsApp == true}
+<GoalsApp/>
+<Back on:click={showGoalsApp}/>
+
+{/if}
+
 
 
 <style>
