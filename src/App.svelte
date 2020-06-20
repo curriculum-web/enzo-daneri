@@ -99,10 +99,9 @@ tips == false && contacto == false && info == false
 
 {/if}
 
-{#if showGoalsApp == true}
+{#if goalsApp == true}
 <GoalsApp/>
 <Back on:click={showGoalsApp}/>
-
 {/if}
 
 
