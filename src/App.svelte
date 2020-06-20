@@ -5,7 +5,7 @@
   //Components
   import Programacion from './Programacion.svelte';
   import Back from './Back.svelte'
-  import Compania from './Compania.svelte'
+  import Product from './Product.svelte'
   import Tips from './Tips.svelte'
   import Contacto from './Contacto.svelte'
   import Info from './Info.svelte'
@@ -14,7 +14,7 @@
 
   //Variables
   let programacion = false
-  let compania = false
+  let product = false
   let tips = false
   let contacto = false
   let info = false
@@ -25,8 +25,8 @@
   const showProgramacion = () => {
 	  programacion = !programacion
   }
-  const showCompania = () => {
-	  compania = !compania
+  const showProduct = () => {
+	 product = !product
   }
   const showTips = () => {
 	  tips = !tips
@@ -49,7 +49,7 @@
 <!-- ##################---------HTML ----------######################>
 
 <!-- Main Content/Conditional rendering -->
-{#if programacion == false && compania == false && 
+{#if programacion == false && product == false && 
 tips == false && contacto == false && info == false
 && contentManager == false && goalsApp == false}
 
@@ -59,7 +59,7 @@ tips == false && contacto == false && info == false
 <h2>Servicios Remotos</h2>
 
 <div class="btn" on:click={showProgramacion}>Programador</div>
-<div class="btn" on:click={showCompania}>Producto</div>
+<div class="btn" on:click={showProduct}>Producto</div>
 <div class="btn" on:click={showContentManager}>Blog</div>
 
 
@@ -81,8 +81,8 @@ tips == false && contacto == false && info == false
 {/if}
 
 <!-- Conditional rendering- Product -->
-{#if compania == true}
-<Compania on:click={showCompania}/>
+{#if product == true}
+<Product on:click={showProduct}/>
 {/if}
 
 <!-- Conditional rendering- Tips -->

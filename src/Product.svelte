@@ -1,39 +1,22 @@
 <script>
+  //Transition from Svelte
   import { fly} from 'svelte/transition';
+
+  //Components
   import Back from './Back.svelte'
 
+  //Variables
   let comprar = false
+
+  //Functions
   const showComprar = () => {
     comprar = !comprar
   }
 
 </script>
 
-{#if comprar == false}
 
-<div class="container" in:fly="{{x:-300, duration: 600}}">
-
-<h1 ><span>Curriculum</span> Web</h1>
-<h2>Product</h2>
-
-<div class="card">
-<div class="card-content">
-<i class="fas fa-briefcase"></i>
- <p>Creación de curriculum web y sitios personales.</p>
- <i class="fas fa-globe-americas" ></i>
- <p> Compartí toda tu info profesional con el mundo</p>
- 
-  <a  href="https://wa.me/542392462524/?text=Hola!.%20Vi%20tu%20web%20.">
-  <div class="btn">Escribime</div></a>
-</div>
-
-</div>
-</div>
-<Back on:click/>
-
-{/if}
-
-
+<!-- ######################--------STYLES-------############################################ -->
 
 <style>
 
@@ -117,3 +100,30 @@ i {
  
      
 </style>
+
+<!-- ##################------------HTML--------------############################## -->
+
+<!-- Conditional rendering- Main content -->
+{#if comprar == false}
+
+<div class="container" in:fly="{{x:-300, duration: 600}}">
+
+<h1 ><span>Curriculum</span> Web</h1>
+<h2>Product</h2>
+
+<div class="card">
+<div class="card-content">
+<i class="fas fa-briefcase"></i>
+ <p>Creación de curriculum web y sitios personales.</p>
+ <i class="fas fa-globe-americas" ></i>
+ <p> Compartí toda tu info profesional con el mundo</p>
+ 
+  <a  href="https://wa.me/542392462524/?text=Hola!.%20Vi%20tu%20web%20.">
+  <div class="btn">Escribime</div></a>
+</div>
+
+</div>
+</div>
+<Back on:click/>
+{/if}
+

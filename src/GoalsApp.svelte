@@ -1,7 +1,11 @@
 <script>
+// Transition from Svelte
 import {fly} from 'svelte/transition';
+
+//Imports
 import Goal from './Goal.svelte';
 
+// Variables
 let goals= [ {
     name: '',
     description: '',
@@ -12,6 +16,7 @@ let name = '';
 let description = '';
 let id = null;
 
+//Functions
 const addGoal = ({name, description}) => {
      let goal = {id: Math.random() * Date.now(),
      name, description};
@@ -23,6 +28,8 @@ const addGoal = ({name, description}) => {
 
 </script>
 
+
+<!-- #########--------------STYLES--------------################## -->
 <style>
 .container {
     text-align: center;
@@ -40,6 +47,7 @@ const addGoal = ({name, description}) => {
 
 </style>
 
+<!-- ############--------HTML---------############################# -->
 
 <div class="container"  in:fly="{{x:-300, duration: 600}}">
 
