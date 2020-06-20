@@ -1,5 +1,8 @@
 <script>
+  //Transition from Svelte
   import { fly, fade} from 'svelte/transition';
+
+  //Components
   import Programacion from './Programacion.svelte';
   import Back from './Back.svelte'
   import Compania from './Compania.svelte'
@@ -9,6 +12,7 @@
   import ContentManager from './ContentManager.svelte'
   import GoalsApp from './GoalsApp.svelte'
 
+  //Variables
   let programacion = false
   let compania = false
   let tips = false
@@ -17,6 +21,7 @@
   let contentManager = false
   let goalsApp = false
 
+  //Functions
   const showProgramacion = () => {
 	  programacion = !programacion
   }
@@ -41,7 +46,9 @@
 
 </script>
 
+<!-- ##################---------HTML ----------######################>
 
+<!-- Main Content/Conditional rendering -->
 {#if programacion == false && compania == false && 
 tips == false && contacto == false && info == false
 && contentManager == false && goalsApp == false}
@@ -67,45 +74,49 @@ tips == false && contacto == false && info == false
 </div>
 {/if}
 
+<!-- Conditional rendering- Programming -->
 {#if programacion == true}
 <Programacion on:click={showProgramacion}/>
 <Back on:click={showProgramacion}/>
-
 {/if}
 
+<!-- Conditional rendering- Product -->
 {#if compania == true}
 <Compania on:click={showCompania}/>
-
 {/if}
 
+<!-- Conditional rendering- Tips -->
 {#if  tips == true}
  <Tips/>
  <Back on:click={showTips}/>
 {/if}
 
+<!-- Conditional rendering- Contact -->
 {#if contacto == true}
 <Contacto/>
  <Back on:click={showContacto}/>
 {/if}
 
+<!-- Conditional rendering- Info -->
 {#if info == true}
 <Info/>
 <Back on:click={showInfo}/>
 {/if}
 
+<!-- Conditional rendering- Blog-->
 {#if contentManager == true}
 <ContentManager/>
 <Back on:click={showContentManager}/>
-
 {/if}
 
+<!-- Conditional rendering- Goals(secret section) -->
 {#if goalsApp == true}
 <GoalsApp/>
 <Back on:click={showGoalsApp}/>
 {/if}
 
 
-
+<!-- ####################---------STYLES---------######################### -->
 <style>
 .container {
 	text-align: center;
